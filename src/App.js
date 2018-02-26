@@ -8,16 +8,20 @@ class App extends Component {
   constructor(props) {
     super(props);
   }
-    handleChange(event) {
-    const target = event.target;
-    const value = target.type === 'checkbox' ? target.checked : target.value;
-    const name = target.name;
-
-    this.setState({//adicionar +1
-      [name]: value
-    });
+  calculate(event) {
+    
+   // const target = event.target;
+    //const value = target.type === 'checkbox' ? target.checked : target.value;
+    //const name = target.name;
+      
+      function sub(data1, data2){
+        return data1 - data2;
+      }
+      this.calculate.setstate(data1)
+      //alert(data1);
+      //return("data1");
+      //return("data2");
   }
-
   render() {
     return (
       <div className="App">
@@ -26,22 +30,20 @@ class App extends Component {
           <h1 className="App-title">Welcome to React</h1>
         </header>
         <p className="App-intro">To get sandro, edit
-           <code>src/App.js</code> and save to reload.
+           <code> src/App.js</code> and save to reload.
            </p>
            <div>
            <input 
             type="date"
             //name
             name="edgar"
-            value={this.props.placeholderText} 
-            onChange={this.handleChange} />
+            value={this.props.data1}/>
            </div>
            <input 
             type="date"
             //name 
             name="ragnarok"
-            value={this.props.placeholderText} 
-            onChange={this.handleChange}/>
+            value={this.props.data2}/>
             <div>
             <button onClick={this.calculate}>
               Calculate
